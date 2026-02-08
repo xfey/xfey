@@ -1,6 +1,6 @@
 ### Xiang Fei (xfey)
 
-Make it happen. Building fun AI projects.
+Make it happen. Building fun things with AI.
 
 ### ✨ Featured
 - [MagicPaste](https://github.com/xfey/MagicPaste): Make your clipboard a little more magical.
