@@ -2,9 +2,9 @@
 
 Make it happen. Building fun things with AI.
 
-<p align="center">
+<div align="center">
   <img src="./header.png" alt="xfey header" width="960" />
-</p>
+</div>
 
 ### ✨ Featured
 - [Vibo](https://github.com/xfey/Vibo): Less IDE, more vibe. Minimal workbench for vibe coding.
