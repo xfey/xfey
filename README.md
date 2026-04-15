@@ -3,6 +3,8 @@
 Make it happen. Building fun things with AI.
 
 ### ✨ Featured
+- [Vibo](https://github.com/xfey/Vibo): Less IDE, more vibe. Minimal workbench for vibe coding.
+- [Friends AI](https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154): Group chat APP with several AI friends, now available on App Store.
 - [MagicPaste](https://github.com/xfey/MagicPaste): Make your clipboard a little more magical.
 - [Tip](https://github.com/TencentCloudADP/youtu-tip): Your proactive on-device AI assistant.
 - [ContextOS](https://github.com/xfey/ContextOS): A proactive framework for AI assistants.
