@@ -2,6 +2,10 @@
 
 Make it happen. Building fun things with AI.
 
+<p align="center">
+  <img src="./header.png" alt="xfey header" width="960" />
+</p>
+
 ### ✨ Featured
 - [Vibo](https://github.com/xfey/Vibo): Less IDE, more vibe. Minimal workbench for vibe coding.
 - [Friends AI](https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154): Group chat APP with several AI friends, now available on App Store.
