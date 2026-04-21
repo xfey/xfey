@@ -1,6 +1,6 @@
 ### Xiang Fei (xfey)
 
-Make it happen. Building fun things with AI.
+Make it happen.
 
 <div align="center">
   <img src="./header.png" alt="xfey header" width="960" />
