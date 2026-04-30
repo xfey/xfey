@@ -2,8 +2,14 @@
 
 Make it happen.
 
+</br>
+
 <div align="center">
-  <img src="./header.png" alt="xfey header" width="960" />
+  <img src="https://ghchart.rshah.org/888888/xfey" alt="contrib graph" width="740" />
+</div>
+
+<div align="center">
+  <img src="./header.png" alt="xfey header" width="840" />
 </div>
 
 ### ✨ Featured
