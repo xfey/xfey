@@ -1,11 +1,11 @@
 ### Xiang Fei (xfey)
 
-Make it happen.
+Make it happen. (with AI)
 
 </br>
 
 <div align="center">
-  <img src="https://ghchart.rshah.org/888888/xfey" alt="contrib graph" width="740" />
+  <img src="https://ghchart.rshah.org/6F6F6F/xfey" alt="contrib graph" width="740" />
 </div>
 
 <div align="center">
