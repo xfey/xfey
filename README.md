@@ -17,6 +17,8 @@ Make it happen.
 - [transformer-from-scratch](https://github.com/xfey/transformer-from-scratch): Practice Transformer implementation for interview prep.
 
 ### 📎 Academic
+- [Workbuddy-Bench](https://github.com/Tencent/workbuddy-bench): A benchmark for evaluating coding agents on real-world work across code, web, office, and security tasks.
+- [Youtu-Agent](https://github.com/TencentCloudADP/youtu-agent): A framework for building, running, evaluating, and training autonomous agents.
 - [Post-Completion-Learning](https://github.com/xfey/Post-Completion-Learning): Code for the paper "Post-Completion Learning for Language Models".
 - [MCP-Zero](https://github.com/xfey/MCP-Zero): Code for the paper "MCP-Zero: Active Tool Discovery for Autonomous LLM Agents".
 - [Dolphin](https://github.com/bytedance/Dolphin): Code for the paper "Dolphin: Document Image Parsing via Heterogeneous Anchor Prompting".
