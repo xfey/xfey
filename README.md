@@ -8,6 +8,7 @@ Make it happen.
 
 ### ✨ Featured
 - [Tutti](https://tutti.now): Team vibe coding, from any folder.
+- [Lobbyte](https://github.com/xfey/Lobbyte): Meet another human while your agents work.
 - [HealthyVibe](https://github.com/xfey/HealthyVibe): Human, stay alive while AI vibes. Break. Breathe. Build.
 - [Vibo](https://github.com/xfey/Vibo): Less IDE, more vibe. Minimal workbench for vibe coding.
 - [Friends AI](https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154): Group chat APP with several AI friends, now available on App Store.
