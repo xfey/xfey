@@ -1,0 +1,58 @@
+[
+  {
+    "slug": "tutti",
+    "name": "Tutti",
+    "date": "2026/08",
+    "description": "Team vibe coding, from any folder.",
+    "url": "https://tutti.now"
+  },
+  {
+    "slug": "lobbyte",
+    "name": "Lobbyte",
+    "date": "2026/08",
+    "description": "Meet another human while your agent works.",
+    "url": "https://github.com/xfey/Lobbyte"
+  },
+  {
+    "slug": "healthyvibe",
+    "name": "HealthyVibe",
+    "date": "2026/05",
+    "description": "Human, stay alive while AI vibes. Break. Breathe. Build.",
+    "url": "https://github.com/xfey/HealthyVibe"
+  },
+  {
+    "slug": "vibo",
+    "name": "Vibo",
+    "date": "2026/04",
+    "description": "Less IDE, more vibe. Minimal workbench for vibe coding.",
+    "url": "https://github.com/xfey/Vibo"
+  },
+  {
+    "slug": "friends",
+    "name": "Friends",
+    "date": "2026/03",
+    "description": "Group chat APP with several AI friends, now available on App Store.",
+    "url": "https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154"
+  },
+  {
+    "slug": "magicpaste",
+    "name": "MagicPaste",
+    "date": "2026/03",
+    "description": "Make your clipboard a little more magical.",
+    "url": "https://github.com/xfey/MagicPaste"
+  },
+  {
+    "slug": "youtu-tip",
+    "name": "Youtu-Tip",
+    "date": "2026/01",
+    "description": "Your proactive on-device AI assistant.",
+    "url": "https://github.com/TencentCloudADP/youtu-tip"
+  },
+  {
+    "slug": "contextos",
+    "name": "ContextOS",
+    "date": "2025/11",
+    "description": "A proactive framework for AI assistants.",
+    "url": "https://github.com/xfey/ContextOS"
+  }
+]

@@ -2,9 +2,47 @@
 
 Make it happen.
 
-<div align="center">
-  <img src="./header.png" alt="xfey header" width="960" />
-</div>
+### Recent Projects
+
+<!-- apps:start -->
+<p align="center">
+  <a href="https://tutti.now">
+    <img src="./assets/apps/tutti.png" alt="Tutti — 2026/08. Team vibe coding, from any folder." width="49%" />
+  </a>
+  <a href="https://github.com/xfey/Lobbyte">
+    <img src="./assets/apps/lobbyte.png" alt="Lobbyte — 2026/08. Meet another human while your agent works." width="49%" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/xfey/HealthyVibe">
+    <img src="./assets/apps/healthyvibe.png" alt="HealthyVibe — 2026/05. Human, stay alive while AI vibes. Break. Breathe. Build." width="49%" />
+  </a>
+  <a href="https://github.com/xfey/Vibo">
+    <img src="./assets/apps/vibo.png" alt="Vibo — 2026/04. Less IDE, more vibe. Minimal workbench for vibe coding." width="49%" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154">
+    <img src="./assets/apps/friends.png" alt="Friends — 2026/03. Group chat APP with several AI friends, now available on App Store." width="49%" />
+  </a>
+  <a href="https://github.com/xfey/MagicPaste">
+    <img src="./assets/apps/magicpaste.png" alt="MagicPaste — 2026/03. Make your clipboard a little more magical." width="49%" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://github.com/TencentCloudADP/youtu-tip">
+    <img src="./assets/apps/youtu-tip.png" alt="Youtu-Tip — 2026/01. Your proactive on-device AI assistant." width="49%" />
+  </a>
+  <a href="https://github.com/xfey/ContextOS">
+    <img src="./assets/apps/contextos.png" alt="ContextOS — 2025/11. A proactive framework for AI assistants." width="49%" />
+  </a>
+</p>
+<!-- apps:end -->
+
+*Code brewing... What’s the next one?*
 
 ### ✨ Featured
 - [Tutti](https://tutti.now): Team vibe coding, from any folder.
