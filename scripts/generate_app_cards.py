@@ -14,9 +14,9 @@ DEFAULT_FONT = Path(
     "Resources/Fonts/ApplicationSupport/BookmanOldStyle.ttc"
 )
 SCALE, OUTPUT_SCALE = 6, 3
-WIDTH, HEIGHT = 320, 170
-DISPLAY_WIDTH = 264
-COLUMNS = 3
+WIDTH, HEIGHT = 240, 204
+DISPLAY_WIDTH = 196
+COLUMNS = 4
 START, END = "<!-- apps:start -->", "<!-- apps:end -->"
 PALETTES = {
     "light": {"title": "#111111", "body": "#444444", "muted": "#858585"},
@@ -37,15 +37,13 @@ def render(app, fonts, theme):
     lines = app["tagline"].splitlines()
     if not 1 <= len(lines) <= 2:
         raise ValueError(f"Use one or two tagline lines: {app['name']}")
-    if any(body.getlength(line) > 288 * SCALE for line in lines):
+    if any(body.getlength(line) > (WIDTH - 24) * SCALE for line in lines):
         raise ValueError(f"Tagline is too wide: {app['name']}")
 
     name_width = title.getlength(app["name"])
-    date_width = date.getlength(app["date"])
-    gap = 10 * SCALE if app["date"] else 0
     x = (WIDTH * SCALE - name_width) / 2
-    if x < 16 * SCALE or x + name_width + gap + date_width > 304 * SCALE:
-        raise ValueError(f"Name and date are too wide: {app['name']}")
+    if x < 12 * SCALE:
+        raise ValueError(f"Name is too wide: {app['name']}")
 
     tile = Image.new("RGBA", (WIDTH * SCALE, HEIGHT * SCALE))
     with Image.open(ASSETS / "icons" / f"{app['slug']}.png") as source:
@@ -59,20 +57,20 @@ def render(app, fonts, theme):
             icon = Image.new("RGBA", icon.size, "#c3c9d1")
             alpha = alpha.point(lambda value: min(255, round(value * 1.6)))
         icon.putalpha(alpha)
-    tile.alpha_composite(icon, (104 * SCALE, -5 * SCALE))
+    tile.alpha_composite(icon, ((WIDTH - 112) * SCALE // 2, -5 * SCALE))
 
     draw = ImageDraw.Draw(tile)
-    draw.text((x, 111 * SCALE), app["name"], font=title, anchor="ls",
+    draw.text((x, 119 * SCALE), app["name"], font=title, anchor="ls",
               fill=colors["muted"] if placeholder else colors["title"])
-    if app["date"]:
-        draw.text((x + name_width + gap, 111 * SCALE), app["date"], font=date,
-                  fill=colors["muted"], anchor="ls")
     # Center single-line captions in the same area used for two-line captions.
-    baseline = 135 if len(lines) == 2 else 145
+    baseline = 143 if len(lines) == 2 else 153
     for index, line in enumerate(lines):
         draw.text((WIDTH * SCALE / 2, (baseline + 21 * index) * SCALE), line,
                   font=body, fill=colors["muted"] if placeholder else colors["body"],
                   anchor="ms")
+    if app["date"]:
+        draw.text((WIDTH * SCALE / 2, 189 * SCALE), app["date"], font=date,
+                  fill=colors["muted"], anchor="ms")
     return tile.resize((WIDTH * OUTPUT_SCALE, HEIGHT * OUTPUT_SCALE),
                        Image.Resampling.LANCZOS)
 
@@ -109,6 +107,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--font", type=Path, default=DEFAULT_FONT,
                         help="Path to the Bookman Old Style regular TTF/TTC font")
+    parser.add_argument("--bold-font", type=Path,
+                        help="Separate Bookman Old Style Bold font, if not in the TTC")
     args = parser.parse_args()
     if not args.font.is_file():
         parser.error("Bookman Old Style is missing; supply its path with --font.")
@@ -117,11 +117,20 @@ def main():
         parser.error("The font must be Bookman Old Style Regular.")
     fonts = {
         key: ImageFont.truetype(str(args.font), round(size * SCALE))
-        for key, size in {"title": 22, "date": 11, "body": 16.5}.items()
+        for key, size in {"date": 11, "body": 16.5}.items()
     }
+    try:
+        fonts["title"] = ImageFont.truetype(
+            str(args.bold_font or args.font), 22 * SCALE,
+            index=0 if args.bold_font else 1,
+        )
+    except OSError:
+        parser.error("Bookman Old Style Bold is missing; supply --bold-font.")
+    if fonts["title"].getname() != ("Bookman Old Style", "Bold"):
+        parser.error("The title font must be Bookman Old Style Bold.")
 
     apps = json.loads((ASSETS / "apps.json").read_text())
-    items = apps + ([BREWING] if len(apps) % COLUMNS else [])
+    items = apps + [BREWING]
     readme_path = ROOT / "README.md"
     before, section = readme_path.read_text().split(START, 1)
     _, after = section.split(END, 1)
