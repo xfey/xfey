@@ -6,43 +6,23 @@ Make it happen.
 
 <!-- apps:start -->
 <p align="center">
-  <a href="https://tutti.now">
-    <img src="./assets/apps/tutti.png" alt="Tutti — 2026/08. Team vibe coding, from any folder." width="49%" />
-  </a>
-  <a href="https://github.com/xfey/Lobbyte">
-    <img src="./assets/apps/lobbyte.png" alt="Lobbyte — 2026/08. Meet another human while your agent works." width="49%" />
-  </a>
+  <a href="https://tutti.now"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/tutti-dark.png" /><img src="./assets/apps/tutti.png" alt="Tutti — 2026/08. Team vibe coding, from any folder." width="264" /></picture></a>
+  <a href="https://github.com/xfey/Lobbyte"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/lobbyte-dark.png" /><img src="./assets/apps/lobbyte.png" alt="Lobbyte — 2026/08. Meet another human while your agent works." width="264" /></picture></a>
+  <a href="https://github.com/xfey/HealthyVibe"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/healthyvibe-dark.png" /><img src="./assets/apps/healthyvibe.png" alt="HealthyVibe — 2026/05. Human, stay alive while AI vibes. Break. Breathe. Build." width="264" /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://github.com/xfey/HealthyVibe">
-    <img src="./assets/apps/healthyvibe.png" alt="HealthyVibe — 2026/05. Human, stay alive while AI vibes. Break. Breathe. Build." width="49%" />
-  </a>
-  <a href="https://github.com/xfey/Vibo">
-    <img src="./assets/apps/vibo.png" alt="Vibo — 2026/04. Less IDE, more vibe. Minimal workbench for vibe coding." width="49%" />
-  </a>
+  <a href="https://github.com/xfey/Vibo"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/vibo-dark.png" /><img src="./assets/apps/vibo.png" alt="Vibo — 2026/04. Less IDE, more vibe. Minimal workbench for vibe coding." width="264" /></picture></a>
+  <a href="https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/friends-dark.png" /><img src="./assets/apps/friends.png" alt="Friends — 2026/03. Group chat APP with several AI friends, now available on App Store." width="264" /></picture></a>
+  <a href="https://github.com/xfey/MagicPaste"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/magicpaste-dark.png" /><img src="./assets/apps/magicpaste.png" alt="MagicPaste — 2026/03. Make your clipboard a little more magical." width="264" /></picture></a>
 </p>
 
 <p align="center">
-  <a href="https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154">
-    <img src="./assets/apps/friends.png" alt="Friends — 2026/03. Group chat APP with several AI friends, now available on App Store." width="49%" />
-  </a>
-  <a href="https://github.com/xfey/MagicPaste">
-    <img src="./assets/apps/magicpaste.png" alt="MagicPaste — 2026/03. Make your clipboard a little more magical." width="49%" />
-  </a>
-</p>
-
-<p align="center">
-  <a href="https://github.com/TencentCloudADP/youtu-tip">
-    <img src="./assets/apps/youtu-tip.png" alt="Youtu-Tip — 2026/01. Your proactive on-device AI assistant." width="49%" />
-  </a>
-  <a href="https://github.com/xfey/ContextOS">
-    <img src="./assets/apps/contextos.png" alt="ContextOS — 2025/11. A proactive framework for AI assistants." width="49%" />
-  </a>
+  <a href="https://github.com/TencentCloudADP/youtu-tip"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/youtu-tip-dark.png" /><img src="./assets/apps/youtu-tip.png" alt="Youtu-Tip — 2026/01. Your proactive on-device AI assistant." width="264" /></picture></a>
+  <a href="https://github.com/xfey/ContextOS"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/contextos-dark.png" /><img src="./assets/apps/contextos.png" alt="ContextOS — 2025/11. A proactive framework for AI assistants." width="264" /></picture></a>
+  <picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/brewing-dark.png" /><img src="./assets/apps/brewing.png" alt="Code brewing... What’s the next one?" width="264" /></picture>
 </p>
 <!-- apps:end -->
-
-*Code brewing... What’s the next one?*
 
 ### ✨ Featured
 - [Tutti](https://tutti.now): Team vibe coding, from any folder.

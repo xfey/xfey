@@ -2,6 +2,7 @@
   {
     "slug": "tutti",
     "name": "Tutti",
+    "tagline": "Team vibe coding,\nfrom any folder.",
     "date": "2026/08",
     "description": "Team vibe coding, from any folder.",
     "url": "https://tutti.now"
@@ -9,6 +10,7 @@
   {
     "slug": "lobbyte",
     "name": "Lobbyte",
+    "tagline": "Meet another human\nwhile your agents work.",
     "date": "2026/08",
     "description": "Meet another human while your agent works.",
     "url": "https://github.com/xfey/Lobbyte"
@@ -16,6 +18,7 @@
   {
     "slug": "healthyvibe",
     "name": "HealthyVibe",
+    "tagline": "Stay well while AI vibes.\nBreak. Breathe. Build.",
     "date": "2026/05",
     "description": "Human, stay alive while AI vibes. Break. Breathe. Build.",
     "url": "https://github.com/xfey/HealthyVibe"
@@ -23,6 +26,7 @@
   {
     "slug": "vibo",
     "name": "Vibo",
+    "tagline": "Less IDE, more vibe.\nA minimal coding workbench.",
     "date": "2026/04",
     "description": "Less IDE, more vibe. Minimal workbench for vibe coding.",
     "url": "https://github.com/xfey/Vibo"
@@ -30,6 +34,7 @@
   {
     "slug": "friends",
     "name": "Friends",
+    "tagline": "Group chat with\nyour AI friends.",
     "date": "2026/03",
     "description": "Group chat APP with several AI friends, now available on App Store.",
     "url": "https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154"
@@ -37,6 +42,7 @@
   {
     "slug": "magicpaste",
     "name": "MagicPaste",
+    "tagline": "A little magic\nfor your clipboard.",
     "date": "2026/03",
     "description": "Make your clipboard a little more magical.",
     "url": "https://github.com/xfey/MagicPaste"
@@ -44,6 +50,7 @@
   {
     "slug": "youtu-tip",
     "name": "Youtu-Tip",
+    "tagline": "Your proactive,\non-device AI assistant.",
     "date": "2026/01",
     "description": "Your proactive on-device AI assistant.",
     "url": "https://github.com/TencentCloudADP/youtu-tip"
@@ -51,6 +58,7 @@
   {
     "slug": "contextos",
     "name": "ContextOS",
+    "tagline": "A proactive framework\nfor AI assistants.",
     "date": "2025/11",
     "description": "A proactive framework for AI assistants.",
     "url": "https://github.com/xfey/ContextOS"

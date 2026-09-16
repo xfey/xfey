@@ -1,11 +1,13 @@
-App cards use Bookman Old Style Regular. The PNGs in `icons/` were cropped
-from the original `header.png`, including its existing shadows and rounded corners.
-The font is rendered into each card, so GitHub visitors do not need it installed.
+The app gallery uses Bookman Old Style Regular, the original app logos, and
+transparent images with no surrounding frames or backgrounds. Logo shadows
+are retained. Separate light and dark text variants blend into GitHub's theme.
 
 To add or update an app:
 
-1. Add its square logo image, including space around any shadow, to `icons/<slug>.png`.
-2. Edit `apps.json`. Its order determines the two-column layout.
+1. Add a square, transparent logo with room for its shadow to `icons/<slug>.png`.
+2. Edit `apps.json`. Use `tagline` for one or two short display lines, separated
+   by `\n`; `description` retains the full text for image accessibility. The
+   array order determines display order.
 3. From the repository root, run:
 
    ```sh
@@ -17,14 +19,17 @@ The script uses the macOS Bookman Old Style font by default. On other systems,
 pass `--font /path/to/BookmanOldStyle.ttf` with the regular font installed locally.
 Font files are not included in this repository.
 
-Each card is 1440 × 492 pixels, rendered at 3× resolution. The script updates
-only the image grid between the `apps:start` and `apps:end` markers in the root
-README. The Featured text links can be edited separately.
+Each image is 960 × 510 pixels. Three 264 px images fit in a normal desktop
+GitHub README; on narrower screens they wrap without shrinking the text.
+The `picture` element selects the dark text variant when the browser prefers
+a dark color scheme. Each app remains individually clickable. The muted
+“Code brewing…” placeholder fills an open position in the last row and is not
+linked; it is omitted when the app count is divisible by three.
 
-The border color is `#CCD6DD`, sampled from the original header. Its thickness
-is scaled from the original 7 px stroke at 5610 px image width to preserve the
-same visible weight in the 49%-width, two-column layout. Supersampling keeps
-the fractional stroke and rounded corners smooth.
+The script updates only the image grid between the `apps:start` and `apps:end`
+markers in the root README. The Featured text links can be edited separately.
 
-The original `header.png` is retained as the source artwork; adding new apps
-does not require editing it.
+The original `header.png` remains the source artwork. Existing logos and the
+“Code brewing…” icon were cropped from it; the white background outside each
+rounded logo was removed while retaining its shadow. Adding new apps does not
+require editing the header.

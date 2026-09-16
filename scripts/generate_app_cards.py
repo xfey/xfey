@@ -1,4 +1,4 @@
-"""Render app cards with Bookman Old Style and update the README image grid."""
+"""Render a borderless app gallery in Bookman Old Style for the GitHub README."""
 
 import argparse
 import html
@@ -13,85 +13,93 @@ DEFAULT_FONT = Path(
     "/System/Library/PrivateFrameworks/FontServices.framework/Versions/A/"
     "Resources/Fonts/ApplicationSupport/BookmanOldStyle.ttc"
 )
-SCALE = 12  # Supersample the text, rounded corners, and fractional border width.
-OUTPUT_SCALE = 3
-WIDTH, HEIGHT = 480, 164
-BORDER_COLOR = "#ccd6dd"  # Sampled from the straight edge of header.png.
-CARD_WIDTH_PERCENT = 49
-# The original 5610 px header has a 7 px stroke. Keep the same visible stroke
-# when a card occupies 49% of the space previously occupied by the header.
-BORDER_WIDTH = 7 * WIDTH / (5610 * CARD_WIDTH_PERCENT / 100)
+SCALE, OUTPUT_SCALE = 6, 3
+WIDTH, HEIGHT = 320, 170
+DISPLAY_WIDTH = 264
+COLUMNS = 3
 START, END = "<!-- apps:start -->", "<!-- apps:end -->"
+PALETTES = {
+    "light": {"title": "#111111", "body": "#444444", "muted": "#858585"},
+    "dark": {"title": "#f0f3f6", "body": "#c3c9d1", "muted": "#9199a3"},
+}
+BREWING = {
+    "slug": "brewing",
+    "name": "Code brewing...",
+    "date": "",
+    "description": "What’s the next one?",
+    "tagline": "What’s the next one?",
+}
 
 
-def wrap(text, font, width):
-    lines = []
-    for word in text.split():
-        if font.getlength(word) > width:
-            raise ValueError(f"Word is too wide for the card: {word}")
-        candidate = f"{lines[-1]} {word}" if lines else word
-        if lines and font.getlength(candidate) <= width:
-            lines[-1] = candidate
-        else:
-            lines.append(word)
-    return lines
+def render(app, fonts, theme):
+    colors = PALETTES[theme]
+    title, date, body = (fonts[key] for key in ("title", "date", "body"))
+    lines = app["tagline"].splitlines()
+    if not 1 <= len(lines) <= 2:
+        raise ValueError(f"Use one or two tagline lines: {app['name']}")
+    if any(body.getlength(line) > 288 * SCALE for line in lines):
+        raise ValueError(f"Tagline is too wide: {app['name']}")
 
+    name_width = title.getlength(app["name"])
+    date_width = date.getlength(app["date"])
+    gap = 10 * SCALE if app["date"] else 0
+    x = (WIDTH * SCALE - name_width) / 2
+    if x < 16 * SCALE or x + name_width + gap + date_width > 304 * SCALE:
+        raise ValueError(f"Name and date are too wide: {app['name']}")
 
-def render(app, font_path):
-    title = ImageFont.truetype(str(font_path), 27 * SCALE)
-    date = ImageFont.truetype(str(font_path), 16 * SCALE)
-    body = ImageFont.truetype(str(font_path), round(17.5 * SCALE))
-    if title.getlength(app["name"]) > 332 * SCALE:
-        raise ValueError(f"Title is too wide: {app['name']}")
-    lines = wrap(app["description"], body, 424 * SCALE)
-    if len(lines) > 2:
-        raise ValueError(f"Description needs more than two lines: {app['name']}")
-
-    frame = Image.new("RGBA", (WIDTH * SCALE, HEIGHT * SCALE))
-    draw = ImageDraw.Draw(frame)
-    draw.rounded_rectangle(
-        (1, 1, frame.width - 2, frame.height - 2),
-        radius=18 * SCALE,
-        fill="white",
-        outline=BORDER_COLOR,
-        width=round(BORDER_WIDTH * SCALE),
-    )
-    card = Image.new("RGBA", frame.size)
-    draw = ImageDraw.Draw(card)
+    tile = Image.new("RGBA", (WIDTH * SCALE, HEIGHT * SCALE))
     with Image.open(ASSETS / "icons" / f"{app['slug']}.png") as source:
         icon = source.convert("RGBA").resize(
-            (96 * SCALE, 96 * SCALE), Image.Resampling.LANCZOS
+            (112 * SCALE, 112 * SCALE), Image.Resampling.LANCZOS
         )
-    card.alpha_composite(icon, (14 * SCALE, 2 * SCALE))
-    draw.text((120 * SCALE, 25 * SCALE), app["name"], font=title,
-              fill="#111111", anchor="lt")
-    draw.text((120 * SCALE, 63 * SCALE), app["date"], font=date,
-              fill="#888888", anchor="lt")
+    placeholder = "url" not in app
+    if placeholder:
+        alpha = icon.getchannel("A")
+        if theme == "dark":
+            icon = Image.new("RGBA", icon.size, "#c3c9d1")
+            alpha = alpha.point(lambda value: min(255, round(value * 1.6)))
+        icon.putalpha(alpha)
+    tile.alpha_composite(icon, (104 * SCALE, -5 * SCALE))
+
+    draw = ImageDraw.Draw(tile)
+    draw.text((x, 111 * SCALE), app["name"], font=title, anchor="ls",
+              fill=colors["muted"] if placeholder else colors["title"])
+    if app["date"]:
+        draw.text((x + name_width + gap, 111 * SCALE), app["date"], font=date,
+                  fill=colors["muted"], anchor="ls")
+    # Center single-line captions in the same area used for two-line captions.
+    baseline = 135 if len(lines) == 2 else 145
     for index, line in enumerate(lines):
-        draw.text((28 * SCALE, (102 + 24 * index) * SCALE), line,
-                  font=body, fill="#111111", anchor="lt")
-    size = (WIDTH * OUTPUT_SCALE, HEIGHT * OUTPUT_SCALE)
-    # Area sampling preserves the exact border color without ringing, while
-    # Lanczos keeps the logo and text crisp.
-    result = frame.resize(size, Image.Resampling.BOX)
-    result.alpha_composite(card.resize(size, Image.Resampling.LANCZOS))
-    return result
+        draw.text((WIDTH * SCALE / 2, (baseline + 21 * index) * SCALE), line,
+                  font=body, fill=colors["muted"] if placeholder else colors["body"],
+                  anchor="ms")
+    return tile.resize((WIDTH * OUTPUT_SCALE, HEIGHT * OUTPUT_SCALE),
+                       Image.Resampling.LANCZOS)
 
 
-def image_grid(apps):
+def image_grid(items):
     rows = []
-    for index in range(0, len(apps), 2):
+    for index in range(0, len(items), COLUMNS):
         row = ['<p align="center">']
-        for app in apps[index:index + 2]:
+        for app in items[index:index + COLUMNS]:
+            date = f" — {app['date']}" if app["date"] else ""
+            separator = ". " if date else " "
             alt = html.escape(
-                f"{app['name']} — {app['date']}. {app['description']}", quote=True
+                f"{app['name']}{date}{separator}{app['description']}", quote=True
             )
-            row.extend([
-                f'  <a href="{html.escape(app["url"], quote=True)}">',
-                f'    <img src="./assets/apps/{app["slug"]}.png" '
-                f'alt="{alt}" width="{CARD_WIDTH_PERCENT}%" />',
-                '  </a>',
-            ])
+            # No whitespace inside the link: GitHub otherwise underlines it
+            # beside the image on hover, leaving stray blue marks in the grid.
+            picture = (
+                '<picture><source media="(prefers-color-scheme: dark)" '
+                f'srcset="./assets/apps/{app["slug"]}-dark.png" />'
+                f'<img src="./assets/apps/{app["slug"]}.png" '
+                f'alt="{alt}" width="{DISPLAY_WIDTH}" /></picture>'
+            )
+            if "url" in app:
+                url = html.escape(app["url"], quote=True)
+                row.append(f'  <a href="{url}">{picture}</a>')
+            else:
+                row.append(f'  {picture}')
         row.append('</p>')
         rows.append('\n'.join(row))
     return '\n\n'.join(rows)
@@ -107,17 +115,25 @@ def main():
     font = ImageFont.truetype(str(args.font), 16)
     if font.getname() != ("Bookman Old Style", "Regular"):
         parser.error("The font must be Bookman Old Style Regular.")
+    fonts = {
+        key: ImageFont.truetype(str(args.font), round(size * SCALE))
+        for key, size in {"title": 22, "date": 11, "body": 16.5}.items()
+    }
 
     apps = json.loads((ASSETS / "apps.json").read_text())
+    items = apps + ([BREWING] if len(apps) % COLUMNS else [])
     readme_path = ROOT / "README.md"
-    readme = readme_path.read_text()
-    before, section = readme.split(START, 1)
+    before, section = readme_path.read_text().split(START, 1)
     _, after = section.split(END, 1)
-    cards = [(app, render(app, args.font)) for app in apps]
-    for app, card in cards:
-        card.save(ASSETS / f"{app['slug']}.png", optimize=True)
-    readme_path.write_text(f"{before}{START}\n{image_grid(apps)}\n{END}{after}")
-    print(f"Generated {len(cards)} cards and updated the README grid.")
+    images = [
+        (app, theme, render(app, fonts, theme))
+        for app in items for theme in PALETTES
+    ]
+    for app, theme, image in images:
+        suffix = "-dark" if theme == "dark" else ""
+        image.save(ASSETS / f"{app['slug']}{suffix}.png", optimize=True)
+    readme_path.write_text(f"{before}{START}\n{image_grid(items)}\n{END}{after}")
+    print(f"Generated {len(images)} theme images and updated the README gallery.")
 
 
 if __name__ == "__main__":
