@@ -1,40 +1,29 @@
-Titles use Bookman Old Style Bold; captions and dates use Regular. The gallery
-preserves the original app logos and their shadows on transparent images, with
-no surrounding frames or backgrounds. Separate light and dark text variants
-blend into GitHub's theme.
+These PNGs form the clickable app gallery in the profile README.
 
-To add or update an app:
+- `apps.json` contains application names, dates, descriptions, and destinations.
+  The README generator sorts by `YYYY/MM`, newest first, keeping the existing
+  order within the same month.
+- `icons/` contains the source logos with their original shadows and transparent
+  backgrounds.
+- `<slug>.png` and `<slug>-dark.png` contain the light and dark versions of each
+  application tile.
+- `explore-desktop.png` and `explore-desktop-dark.png` form the image button
+  linking to https://feedthis.dev below the app gallery.
 
-1. Add a square, transparent logo with room for its shadow to `icons/<slug>.png`.
-2. Edit `apps.json`. Use `tagline` for one or two short display lines, separated
-   by `\n`; `description` retains the full text for image accessibility. The
-   array order determines display order; add new releases at the beginning.
-3. From the repository root, run:
+Each transparent tile is 444 × 426 px, displayed at 148 × 142 px. It shows only
+the original logo, a Helvetica Neue Medium name, and the release month beneath
+in Helvetica Neue Regular. Logos fit an 88 px area including their shadows.
+The website entry matches the app icons: a white rounded square with a subtle
+shadow and a monochrome outward arrow, labeled “Explore more” beneath it. It is
+444 × 366 px, displayed at 148 × 122 px, with no subtitle or visible URL.
+Font files are not included in the repository.
 
-   ```sh
-   python3 -m pip install Pillow
-   python3 scripts/generate_app_cards.py
-   ```
+All apps are shown, in groups of four: the current eight apps occupy two rows
+in a wide README. Narrow layouts wrap naturally, with two columns at a typical
+phone width. Each app and the website button is independently clickable and
+includes descriptive alt text. Additional apps create more rows without hiding
+older entries. App descriptions remain in the manifest for the personal website;
+they are not displayed in the README gallery. Research projects stay in the
+README's separate text section. The older `brewing*.png` assets are unused.
 
-The script uses the macOS Bookman Old Style font by default. On other systems,
-pass `--font /path/to/BookmanOldStyle.ttf` with the regular font installed locally
-and `--bold-font /path/to/BookmanOldStyle-Bold.ttf` for the title font. The default
-macOS TTC includes both weights.
-Font files are not included in this repository.
-
-Each image is 720 × 612 pixels. Four 196 px images fit in a normal desktop
-GitHub README; on narrower screens they wrap without shrinking the text.
-The `picture` element selects the dark text variant when the browser prefers
-a dark color scheme. Each app remains individually clickable. The muted
-“Code brewing…” placeholder always follows the apps and is not linked. With
-eight apps it occupies a third row of its own, ready for future additions.
-Titles sit slightly farther below their logos; dates are centered below the
-descriptions.
-
-The script updates only the image grid between the `apps:start` and `apps:end`
-markers in the root README. The Featured text links can be edited separately.
-
-The original `header.png` remains the source artwork. Existing logos and the
-“Code brewing…” icon were cropped from it; the white background outside each
-rounded logo was removed while retaining its shadow. Adding new apps does not
-require editing the header.
+The rendering tools are maintained locally and are not included in this repository.
