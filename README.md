@@ -18,10 +18,6 @@ Make it happen.
   <a href="https://github.com/TencentCloudADP/youtu-tip"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/youtu-tip-dark.png" /><img src="./assets/apps/youtu-tip.png" alt="Youtu-Tip — 2026/01" width="148" /></picture></a>
   <a href="https://github.com/xfey/ContextOS"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/contextos-dark.png" /><img src="./assets/apps/contextos.png" alt="ContextOS — 2025/11" width="148" /></picture></a>
 </p>
-
-<p align="center">
-  <a href="https://feedthis.dev"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/explore-desktop-dark.png" /><img src="./assets/apps/explore-desktop.png" alt="Explore more" width="148" /></picture></a>
-</p>
 <!-- apps:end -->
 
 ### Experiments

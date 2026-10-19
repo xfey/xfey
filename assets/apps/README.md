@@ -7,20 +7,15 @@ These PNGs form the clickable app gallery in the profile README.
   backgrounds.
 - `<slug>.png` and `<slug>-dark.png` contain the light and dark versions of each
   application tile.
-- `explore-desktop.png` and `explore-desktop-dark.png` form the image button
-  linking to https://feedthis.dev below the app gallery.
 
-Each transparent tile is 444 × 426 px, displayed at 148 × 142 px. It shows only
+Each transparent tile is 444 × 450 px, displayed at 148 × 150 px. It shows only
 the original logo, a Helvetica Neue Medium name, and the release month beneath
-in Helvetica Neue Regular. Logos fit an 88 px area including their shadows.
-The website entry matches the app icons: a white rounded square with a subtle
-shadow and a monochrome outward arrow, labeled “Explore more” beneath it. It is
-444 × 366 px, displayed at 148 × 122 px, with no subtitle or visible URL.
+in Helvetica Neue Regular. Logos fit a 96 px area including their shadows.
 Font files are not included in the repository.
 
 All apps are shown, in groups of four: the current eight apps occupy two rows
 in a wide README. Narrow layouts wrap naturally, with two columns at a typical
-phone width. Each app and the website button is independently clickable and
+phone width. Each app is independently clickable and
 includes descriptive alt text. Additional apps create more rows without hiding
 older entries. App descriptions remain in the manifest for the personal website;
 they are not displayed in the README gallery. Research projects stay in the
