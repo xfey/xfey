@@ -1,5 +1,13 @@
 [
   {
+    "slug": "coconet",
+    "name": "Coconet",
+    "tagline": "Share agent sessions.\nBuild together.",
+    "date": "2026/10/20",
+    "description": "Share coding agent sessions and pick up where your team left off.",
+    "url": "https://github.com/xfey/coconet"
+  },
+  {
     "slug": "tenso",
     "name": "Tenso",
     "tagline": "Team vibe coding,\nfrom any folder.",
