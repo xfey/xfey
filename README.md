@@ -6,7 +6,7 @@ Make it happen.
 
 <!-- apps:start -->
 <p align="center">
-  <a href="https://tutti.now"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/tutti-dark.png" /><img src="./assets/apps/tutti.png" alt="Tutti — 2026/08" width="148" /></picture></a>
+  <a href="https://tenso.work"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/tenso-dark.png" /><img src="./assets/apps/tenso.png" alt="Tenso — 2026/08" width="148" /></picture></a>
   <a href="https://github.com/xfey/Lobbyte"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/lobbyte-dark.png" /><img src="./assets/apps/lobbyte.png" alt="Lobbyte — 2026/08" width="148" /></picture></a>
   <a href="https://github.com/xfey/HealthyVibe"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/healthyvibe-dark.png" /><img src="./assets/apps/healthyvibe.png" alt="HealthyVibe — 2026/05" width="148" /></picture></a>
   <a href="https://github.com/xfey/Vibo"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/vibo-dark.png" /><img src="./assets/apps/vibo.png" alt="Vibo — 2026/04" width="148" /></picture></a>
