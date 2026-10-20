@@ -21,10 +21,6 @@ Make it happen.
 </p>
 <!-- apps:end -->
 
-### Experiments
-
-- [transformer-from-scratch](https://github.com/xfey/transformer-from-scratch): Practice Transformer implementation for interview prep.
-
 ### Research
 
 - [Workbuddy-Bench](https://github.com/Tencent/workbuddy-bench): A benchmark for evaluating coding agents on real-world work across code, web, office, and security tasks.
