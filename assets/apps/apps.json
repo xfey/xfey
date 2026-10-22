@@ -8,6 +8,14 @@
     "url": "https://github.com/xfey/coconet"
   },
   {
+    "slug": "1up",
+    "name": "1UP",
+    "tagline": "A little HUD\nfor real life.",
+    "date": "2026/10",
+    "description": "A little HUD for real life. Gentle menu bar reminders to move, hydrate, and rest your eyes.",
+    "url": "https://github.com/xfey/1up"
+  },
+  {
     "slug": "tenso",
     "name": "Tenso",
     "tagline": "Team vibe coding,\nfrom any folder.",

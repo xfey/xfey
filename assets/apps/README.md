@@ -14,8 +14,8 @@ the original logo, a Helvetica Neue Medium name, and the release date beneath
 in Helvetica Neue Regular. Logos fit a 96 px area including their shadows.
 Font files are not included in the repository.
 
-All apps are shown, in centered groups of five in a wide README. The current
-nine apps form two rows of five and four, sharing the same center line.
+All apps are shown, in centered groups of five in a wide README, with each row
+sharing the same center line.
 Narrow layouts wrap naturally, with up to two columns at a typical
 phone width. Each app is independently clickable and
 includes descriptive alt text. Additional apps create more rows without hiding

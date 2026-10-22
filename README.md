@@ -7,13 +7,14 @@ Make it happen.
 <!-- apps:start -->
 <p align="center">
   <a href="https://github.com/xfey/coconet"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/coconet-dark.png" /><img src="./assets/apps/coconet.png" alt="Coconet — 2026/10/20" width="148" /></picture></a>
+  <a href="https://github.com/xfey/1up"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/1up-dark.png" /><img src="./assets/apps/1up.png" alt="1UP — 2026/10" width="148" /></picture></a>
   <a href="https://tenso.work"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/tenso-dark.png" /><img src="./assets/apps/tenso.png" alt="Tenso — 2026/08" width="148" /></picture></a>
   <a href="https://github.com/xfey/Lobbyte"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/lobbyte-dark.png" /><img src="./assets/apps/lobbyte.png" alt="Lobbyte — 2026/08" width="148" /></picture></a>
   <a href="https://github.com/xfey/HealthyVibe"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/healthyvibe-dark.png" /><img src="./assets/apps/healthyvibe.png" alt="HealthyVibe — 2026/05" width="148" /></picture></a>
-  <a href="https://github.com/xfey/Vibo"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/vibo-dark.png" /><img src="./assets/apps/vibo.png" alt="Vibo — 2026/04" width="148" /></picture></a>
 </p>
 
 <p align="center">
+  <a href="https://github.com/xfey/Vibo"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/vibo-dark.png" /><img src="./assets/apps/vibo.png" alt="Vibo — 2026/04" width="148" /></picture></a>
   <a href="https://apps.apple.com/us/app/friends-ai-group-chat/id6759603154"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/friends-dark.png" /><img src="./assets/apps/friends.png" alt="Friends — 2026/03" width="148" /></picture></a>
   <a href="https://github.com/xfey/MagicPaste"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/magicpaste-dark.png" /><img src="./assets/apps/magicpaste.png" alt="MagicPaste — 2026/03" width="148" /></picture></a>
   <a href="https://github.com/TencentCloudADP/youtu-tip"><picture><source media="(prefers-color-scheme: dark)" srcset="./assets/apps/youtu-tip-dark.png" /><img src="./assets/apps/youtu-tip.png" alt="Youtu-Tip — 2026/01" width="148" /></picture></a>
